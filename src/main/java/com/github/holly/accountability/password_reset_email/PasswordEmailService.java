@@ -60,7 +60,7 @@ public class PasswordEmailService {
         String token = createPasswordResetTokenForUser(user);
         mailSender.send(constructResetTokenEmail(token, user));
 
-        return new GenericResponse("Email sent!", "no");
+        return new GenericResponse("Email sent!");
     }
 
     public ResetPasswordDto setNewPassword(String token, ResetPasswordDto passwordDto) throws RuntimeException {

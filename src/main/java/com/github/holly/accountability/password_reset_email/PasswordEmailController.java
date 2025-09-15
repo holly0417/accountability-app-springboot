@@ -1,5 +1,6 @@
 package com.github.holly.accountability.password_reset_email;
 
+import com.github.holly.accountability.config.ErrorResponse;
 import com.github.holly.accountability.config.GenericResponse;
 import com.github.holly.accountability.config.properties.ApplicationProperties;
 import jakarta.validation.Valid;
@@ -22,7 +23,6 @@ import java.util.Map;
 public class PasswordEmailController {
 
     private final ApplicationProperties applicationProperties;
-    //normally encode parameters or when you're sending a URL to the browser somewhere
     public static final String CHANGE_PASSWORD_FROM_TOKEN = "/change-password-from-token";
 
     private final PasswordEmailService passwordEmailService;
@@ -75,7 +75,6 @@ public class PasswordEmailController {
                 .build();
     }
 
-    //change this so it's a JSON object being given with a PostMapping
     @ResponseBody
     @PostMapping("/set-new-password")
     public ResponseEntity<?> changePasswordFromToken(@RequestBody @Valid ResetPasswordDto passwordDto,
@@ -93,10 +92,10 @@ public class PasswordEmailController {
         }
 
         try {
-            ResetPasswordDto newPassword = passwordEmailService.setNewPassword(passwordDto.getToken(), passwordDto);
+            passwordEmailService.setNewPassword(passwordDto.getToken(), passwordDto);
             return ResponseEntity
-                    .ok(new SuccessfulPasswordChangeResponse(
-                            "Password changed successfully!", newPassword));
+                    .ok(new ErrorResponse(
+                            "Password changed successfully!"));
 
         } catch (PasswordEmailService.PasswordsNotMatchingException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -108,45 +107,5 @@ public class PasswordEmailController {
         }
     }
 
-    public class ErrorResponse {
-        private String message;
-        private Map<String, String> errors;
-
-        public ErrorResponse(String message) {
-            this.message = message;
-        }
-
-        public ErrorResponse(String message, Map<String, String> errors) {
-            this.message = message;
-            this.errors = errors;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public Map<String, String> getErrors() {
-            return errors;
-        }
-
-    }
-
-    public class SuccessfulPasswordChangeResponse {
-        private String message;
-        private ResetPasswordDto changedPassword;
-
-        public SuccessfulPasswordChangeResponse(String message, ResetPasswordDto changedPassword) {
-            this.message = message;
-            this.changedPassword = changedPassword;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public ResetPasswordDto getChangedPassword() {
-            return changedPassword;
-        }
-    }
 
 }

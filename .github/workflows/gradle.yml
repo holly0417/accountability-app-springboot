@@ -67,6 +67,9 @@ jobs:
         with:
           gradle-version: 9.0.0
 
+      - name: Build project
+        run: ./gradlew build
+
       - name: Build OCI Image
         run: ./gradlew bootBuildImage --publishImage
         env:
