@@ -136,11 +136,11 @@ tasks.withType<BootBuildImage> {
     docker.publishRegistry.username = System.getenv("USERNAME") ?: "INVALID_USER"
     docker.publishRegistry.password = System.getenv("GITHUB_TOKEN") ?: "INVALID_PASSWORD"
 
-    builder = "paketobuildpacks/builder-jammy-base:latest"
+    builder = "paketobuildpacks/builder-noble-java-tiny"
 
     buildpacks = listOf(
         "paketobuildpacks/environment-variables",
-        "paketobuildpacks/adoptium",
+        //"paketobuildpacks/adoptium",
         "paketobuildpacks/java"
     )
 
@@ -152,7 +152,7 @@ tasks.withType<BootBuildImage> {
     environment = mapOf(
         "BPL_JVM_CDS_ENABLED" to "true",
         "BP_JVM_CDS_ENABLED" to "true",
-        "BP_JVM_VERSION" to "24",
+        "BP_JVM_VERSION" to "25",
         "BPE_LANG" to "en_US.UTF-8",
         "BPE_LANGUAGE" to "LANGUAGE=en_US:en",
         "BPE_LC_ALL" to "en_US.UTF-8",
