@@ -20,7 +20,6 @@ const api = axios.create({
 const sendUpdate = async () => {
   await api.post<RegisterUser>('/registration', user.value)
     .then(response => {
-        // TODO: interpret errors and show on fields
         if (response.headers['Content-Type'] !== 'application/json') {
           window.location.href = response.headers['Location']
         }
@@ -78,6 +77,7 @@ defineOptions({
                 and be between 8 to 20 characters.<br>
               </q-tooltip>
             </q-icon>
+
             <q-input v-model="user.password" type="password" label="Password" />
 
             <q-icon name="info">
