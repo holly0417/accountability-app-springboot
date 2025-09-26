@@ -56,8 +56,8 @@ tasks.withType<Test> {
 }
 
 tasks.withType<JavaCompile> {
-    sourceCompatibility = JavaVersion.VERSION_25.toString()
-    targetCompatibility = JavaVersion.VERSION_25.toString()
+    sourceCompatibility = JavaVersion.VERSION_24.toString()
+    targetCompatibility = JavaVersion.VERSION_24.toString()
 }
 
 frontend {
@@ -152,7 +152,7 @@ tasks.withType<BootBuildImage> {
     environment = mapOf(
         "BPL_JVM_CDS_ENABLED" to "true",
         "BP_JVM_CDS_ENABLED" to "true",
-        "BP_JVM_VERSION" to "25",
+        "BP_JVM_VERSION" to "24",
         "BPE_LANG" to "en_US.UTF-8",
         "BPE_LANGUAGE" to "LANGUAGE=en_US:en",
         "BPE_LC_ALL" to "en_US.UTF-8",
