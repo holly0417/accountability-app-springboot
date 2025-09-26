@@ -56,8 +56,8 @@ tasks.withType<Test> {
 }
 
 tasks.withType<JavaCompile> {
-    sourceCompatibility = JavaVersion.VERSION_24.toString()
-    targetCompatibility = JavaVersion.VERSION_24.toString()
+    sourceCompatibility = JavaVersion.VERSION_25.toString()
+    targetCompatibility = JavaVersion.VERSION_25.toString()
 }
 
 frontend {
@@ -103,7 +103,7 @@ extra {
     project.extra["build.revision.abbreviated"] = shortCommit
     project.extra["build.branch"] = branch
 
-    val containerImageName = "holly394/${project.name}"
+    val containerImageName = "holly0417/${project.name}"
     val containerImageTags = mutableSetOf(shortCommit, branch)
     if (branch.startsWith("v")) {
         containerImageTags.add("stable")
