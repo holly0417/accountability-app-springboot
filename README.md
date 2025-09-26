@@ -11,7 +11,7 @@ So if you'd like to pull this image, know that it may not run as smoothly as you
 ## Built With
 * Spring Web framework
 * [Spring Boot 3.5+](https://spring.io/projects/spring-boot)
-* Flyway - Database Migration
+* [Flyway](org.flywaydb:flyway-core) - Database Migration
 * [Gradle 9.0](https://gradle.org/) - Dependency Management
 * [H2](https://www.h2database.com/html/main.html) - Database
 * [Hibernate](https://hibernate.org/) - ORM
