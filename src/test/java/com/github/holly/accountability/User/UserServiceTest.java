@@ -1,11 +1,15 @@
 package com.github.holly.accountability.User;
+import com.github.holly.accountability.email.EmailService;
 import com.github.holly.accountability.user.*;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Optional;
 
@@ -128,7 +132,7 @@ public class UserServiceTest {
         assertEquals(user.getPassword(), savedUser.getPassword());
         assertEquals(user.getEmail(), savedUser.getEmail());
         assertEquals(user.getName(), savedUser.getName());
-        assertEquals(1, (long) user.getId());
+        assertTrue(user.getId() == 1);
     }
 
     @Test
