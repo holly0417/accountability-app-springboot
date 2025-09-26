@@ -49,7 +49,7 @@ See example here:<br>
 services:  
   accountability-app:  
     container_name: accountability-app  
-    image: ghcr.io/holly0417/accountability:master  
+    image: ghcr.io/holly394/accountability:master  
     ports:  
       - "8080:8080"  
     volumes:  
