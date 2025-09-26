@@ -30,12 +30,12 @@ So if you'd like to pull this image, know that it may not run as smoothly as you
 - Docker
 
 **To pull the image from the command line, use:**
-`$ docker pull ghcr.io/holly0417/accountability:0f4eae4c`
+`$ docker pull ghcr.io/holly394/accountability:0f4eae4c`
 
 ## For Docker containerization configuration
-To pull the image: `ghcr.io/holly0417/accountability:master` <br>
+To pull the image: `ghcr.io/holly394/accountability:master` <br>
 
-You should configure the application based on my [application.yml](https://github.com/holly0417/accountability-app-springboot/blob/master/src/main/resources/application.yml) file.
+You should configure the application based on my [application.yml](https://github.com/holly394/accountability-app-springboot/blob/master/src/main/resources/application.yml) file.
 
 Then, make sure you map this from your host server to your container:<br>
 	`/workspace/logs`<br>
@@ -49,7 +49,7 @@ See example here:<br>
 services:  
   accountability-app:  
     container_name: accountability-app  
-    image: ghcr.io/holly0417/accountability:master  
+    image: ghcr.io/holly394/accountability:master  
     ports:  
       - "8080:8080"  
     volumes:  
@@ -60,7 +60,7 @@ services:
 
 # Database and log file configuration
 ### In your `application.yml`
-See the full [application.yml](https://github.com/holly0417/accountability-app-springboot/blob/master/src/main/resources/application.yml) example here. 
+See the full [application.yml](https://github.com/holly394/accountability-app-springboot/blob/master/src/main/resources/application.yml) example here. 
 
 In this file, you can set the database URL, username, password, as well as the log level and file path for messages from this application.<br>
 In my version, it's set to an H2 database, but you can connect yours to PostgreSQL or any other relational database service. <br>
