@@ -18,14 +18,14 @@ So if you'd like to pull this image, know that it may not run as smoothly as you
 * [Docker](https://www.docker.com/) - Containerization
 
 ### Features
-- Spring Boot 3.5 with Java 24
+- Spring Boot 3.5 with Java 25
 - Caffeine caching
 - Frontend integration with Node.js build pipeline
 - Docker containerization with Paketo Buildpacks
 
 # How to install
 ## Prerequisites
-- JDK 24 or later
+- JDK 25 or later
 - Gradle 9.0+
 - Docker
 
