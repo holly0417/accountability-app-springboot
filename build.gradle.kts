@@ -140,7 +140,10 @@ tasks.withType<BootBuildImage> {
 
     buildpacks = listOf(
         "paketobuildpacks/environment-variables",
-        //"paketobuildpacks/adoptium",
+        /*
+            TO-DO: un-comment adoptium when update for JDK25 comes out
+            "paketobuildpacks/adoptium",
+        */
         "paketobuildpacks/java"
     )
 

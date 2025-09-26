@@ -25,7 +25,7 @@ So if you'd like to pull this image, know that it may not run as smoothly as you
 
 # How to install
 ## Prerequisites
-- JDK 24 or later
+- JDK 25 or later
 - Gradle 9.0+
 - Docker
 
