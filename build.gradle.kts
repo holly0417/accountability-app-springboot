@@ -136,11 +136,11 @@ tasks.withType<BootBuildImage> {
     docker.publishRegistry.username = System.getenv("USERNAME") ?: "INVALID_USER"
     docker.publishRegistry.password = System.getenv("GITHUB_TOKEN") ?: "INVALID_PASSWORD"
 
-    builder = "paketobuildpacks/builder:base"
+    builder = "paketobuildpacks/builder-jammy-base:latest"
 
     buildpacks = listOf(
         "paketobuildpacks/environment-variables",
-        "paketobuildpacks/eclipse-temurin:latest",
+        "paketobuildpacks/adoptium",
         "paketobuildpacks/java"
     )
 
