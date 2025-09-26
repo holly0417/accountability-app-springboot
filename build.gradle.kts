@@ -56,8 +56,8 @@ tasks.withType<Test> {
 }
 
 tasks.withType<JavaCompile> {
-    sourceCompatibility = JavaVersion.VERSION_25.toString()
-    targetCompatibility = JavaVersion.VERSION_25.toString()
+    sourceCompatibility = JavaVersion.VERSION_24.toString()
+    targetCompatibility = JavaVersion.VERSION_24.toString()
 }
 
 frontend {
