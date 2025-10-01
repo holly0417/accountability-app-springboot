@@ -8,6 +8,8 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.io.IOException;
+
 @EnableConfigurationProperties
 @EnableAsync
 @EnableCaching
@@ -16,7 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 
 public class AccountabilityApplication {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SpringApplication.run(AccountabilityApplication.class, args);
     }
 }

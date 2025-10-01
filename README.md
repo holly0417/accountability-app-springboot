@@ -30,10 +30,10 @@ So if you'd like to pull this image, know that it may not run as smoothly as you
 - Docker
 
 **To pull the image from the command line, use:**
-`$ docker pull ghcr.io/holly0417/accountability:0f4eae4c`
+`$ docker pull ghcr.io/holly0417/accountability:latest`
 
 ## For Docker containerization configuration
-To pull the image: `ghcr.io/holly0417/accountability:master` <br>
+To pull the image: `ghcr.io/holly0417/accountability:latest` <br>
 
 You should configure the application based on my [application.yml](https://github.com/holly0417/accountability-app-springboot/blob/master/src/main/resources/application.yml) file.
 
@@ -49,7 +49,7 @@ See example here:<br>
 services:  
   accountability-app:  
     container_name: accountability-app  
-    image: ghcr.io/holly0417/accountability:master  
+    image: ghcr.io/holly0417/accountability:latest  
     ports:  
       - "8080:8080"  
     volumes:  
