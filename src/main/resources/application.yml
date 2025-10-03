@@ -14,9 +14,9 @@ spring:
       enabled: true
   mail:
     host: "smtp.gmail.com"
-    port: 587
-    username: "example@gmail.com"
-    password: "smtppassword"
+    port: ${ACCOUNTABILITY_EMAIL_PORT:587}
+    username: "${ACCOUNTABILITY_EMAIL_ADDRESS:example@gmail.com}"
+    password: "${ACCOUNTABILITY_EMAIL_PASSWORD:accountability-pw}"
     properties:
       mail:
         smtp:
